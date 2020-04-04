@@ -21,7 +21,7 @@ eightPuzzle::eightPuzzle (std::string initState, std::string goalState) {
     }
 }
 
-void eightPuzzle::getState() {
+void eightPuzzle::printState() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             std::cout << puzzle[i][j];
@@ -30,6 +30,20 @@ void eightPuzzle::getState() {
         }
         std::cout << std::endl;
     }
+}
+
+char** eightPuzzle::getState() {
+    char** returnPuzzle;
+    returnPuzzle = new char*[3];
+
+    for (int i = 0; i < 3; i++) {
+        returnPuzzle[i] = new char[3];
+        for (int j = 0; j < 3; j++) {
+            returnPuzzle[i][j] = puzzle[i][j];
+        }
+    }
+
+    return returnPuzzle;
 }
 
 void eightPuzzle::goalState() {

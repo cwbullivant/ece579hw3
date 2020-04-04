@@ -1,6 +1,5 @@
 #include <iostream>
-#include <string>
-#include "eightPuzzle.h"
+#include "agent.h"
 
 int main() {
     std::string initState;
@@ -11,18 +10,8 @@ int main() {
     std::cout << "Enter the goal state: " << std::endl;
     std::cin >> goalState;
 
-    eightPuzzle puzzle(initState, goalState);
+    agent aStar("misplaced", initState, goalState);
 
-    std::cout << "Initial state is \n";
-    puzzle.getState();
-
-    std::cout << "Goal state is \n";
-    puzzle.goalState();
-
-    if (puzzle.isSolved()) {
-        std::cout << "Puzzle is solved." << std::endl;
-    } else {
-        std::cout << "Puzzle is not solved." << std::endl;
-    }
+    aStar.solve();
 
 }

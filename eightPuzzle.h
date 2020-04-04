@@ -7,7 +7,8 @@ class eightPuzzle {
         char goal[3][3];
     public:
         eightPuzzle (std::string initState, std::string goalState);
-        void getState();
+        void printState();
+        char** getState();
         void goalState();
         int getBlankX();
         int getBlankY();
